@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:login_screen_jk/widgets/logo_container.dart';
 
+import 'home_screen.dart';
+
 class LoginScreen extends StatefulWidget {
   @override
   _LoginScreenState createState() => _LoginScreenState();
@@ -39,7 +41,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
   @override
   Widget build(BuildContext context) {
-    var height = MediaQuery.of(context).size.height;
+    double height = MediaQuery.of(context).size.height;
     double width = MediaQuery.of(context).size.width;
     return Scaffold(
       body: Center(
@@ -52,7 +54,7 @@ class _LoginScreenState extends State<LoginScreen> {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                LogoContainer(),
+                LogoContainer(200,200,"LIFEPOINTS"),
                 SizedBox(
                   height: height * 0.04,
                 ),
@@ -164,7 +166,9 @@ class _LoginScreenState extends State<LoginScreen> {
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(18)),
                       onPressed: () {
-                        _formKey.currentState.validate();
+                       // if( _formKey.currentState.validate()){
+                         Navigator.push(context, MaterialPageRoute(builder: (context)=>HomeScreen()));
+                       // }
                       },
                       child: Text(
                         "LOG IN",

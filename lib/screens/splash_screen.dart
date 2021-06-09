@@ -15,7 +15,7 @@ class _SplashScreenState extends State<SplashScreen> {
         height: height,
         color: HexColor("#00011f"),
         child: Center(
-          child: LogoContainer(),
+          child: LogoContainer(200,200,"LIFEPOINTS"),
         ),
       ),
     );
